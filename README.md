@@ -196,9 +196,6 @@ Contributions, suggestions, and bug reports are welcome.
 
 No license has been specified here. Add a `LICENSE` file and update this section once the project's licensing terms have been decided.
 
----
-
-**Repository:** [ghans26/Smartshield-AI](https://github.com/ghans26/Smartshield-AI)
 
 *Built to explore modular software engineering for fraud detection and transaction risk assessment.*
 
