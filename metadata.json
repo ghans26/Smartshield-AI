@@ -1,0 +1,6 @@
+{
+  "name": "SmartShield AI - Real-Time Bank Fraud Detection & 2FA Switch",
+  "description": "Real-time personalized bank fraud detection and 2-Step Verification (2FA) switch with sub-millisecond C++17 anomaly scoring and live TinyFish.ai web intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

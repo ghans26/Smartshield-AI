@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartShield AI — Real-Time Bank Fraud Switch & 2FA Command Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="command-body">
+
+  <!-- Top System Header -->
+  <header class="top-nav">
+    <div class="brand">
+      <div class="shield-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">SmartShield<span class="highlight">.AI</span></div>
+        <div class="brand-sub">Real-Time Bank Fraud Switch & 2FA Autonomous Defense</div>
+      </div>
+    </div>
+
+    <div class="system-status-pills">
+      <div class="status-pill online">
+        <span class="dot"></span>
+        <span class="label">C++17 Engine:</span>
+        <span class="value" id="cppStatusBadge">Compiled & Active</span>
+      </div>
+      <div class="status-pill online">
+        <span class="dot"></span>
+        <span class="label">Spring Boot Switch:</span>
+        <span class="value">Port 8080</span>
+      </div>
+      <div class="status-pill live">
+        <span class="dot pulse"></span>
+        <span class="label">TinyFish.ai:</span>
+        <span class="value">Live OSINT & Agent</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3-Column Split-Screen Command Grid -->
+  <main class="grid-container">
+
+    <!-- COLUMN 1: Customer Mobile Banking App -->
+    <section class="panel panel-mobile">
+      <div class="panel-header">
+        <div class="panel-icon mobile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Customer Banking Switch</h2>
+          <p class="subtitle">Account #88412-IN • Delhi NCR Baseline</p>
+        </div>
+      </div>
+
+      <!-- Quick Preset Demo Buttons for Judges -->
+      <div class="preset-section">
+        <div class="preset-label">⚡ Live Hackathon Demo Presets</div>
+        <div class="preset-buttons">
+          <button type="button" class="preset-btn preset-routine" id="presetRoutineBtn" title="Routine Transaction">
+            <div class="btn-tag">Preset 1</div>
+            <div class="btn-title">Routine Coffee</div>
+            <div class="btn-meta">₹450 • Delhi NCR (0 km)</div>
+          </button>
+          <button type="button" class="preset-btn preset-outlier" id="presetOutlierBtn" title="Legit Outlier Transaction">
+            <div class="btn-tag">Preset 2</div>
+            <div class="btn-title">Legit Outlier</div>
+            <div class="btn-meta">₹9,500 • IRCTC (0 km)</div>
+          </button>
+          <button type="button" class="preset-btn preset-scam" id="presetScamBtn" title="Simulated Fraud / Scam Attack">
+            <div class="btn-tag">Preset 3</div>
+            <div class="btn-title">Scam Attack</div>
+            <div class="btn-meta">₹24,000 • Mumbai (1148 km)</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Wallet Card UI -->
+      <div class="mobile-phone-frame">
+        <div class="wallet-balance-card">
+          <div class="wallet-top">
+            <span class="bank-name">Bharat Premier Bank</span>
+            <span class="chip-icon">UPI • RuPay</span>
+          </div>
+          <div class="balance-label">Available Balance</div>
+          <div class="balance-val" id="userBalanceDisplay">₹74,500.00</div>
+          <div class="wallet-stats">
+            <div>
+              <span class="stat-lbl">Daily Mean</span>
+              <span class="stat-num" id="dailyMeanDisplay">₹520.00</span>
+            </div>
+            <div>
+              <span class="stat-lbl">Month Spend</span>
+              <span class="stat-num" id="monthSpendDisplay">₹11,480 / ₹18k</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transfer Form -->
+        <form id="transferForm" class="transfer-form">
+          <div class="form-group">
+            <label for="amountInput">Amount (INR)</label>
+            <div class="input-prefix-wrapper">
+              <span class="input-prefix">₹</span>
+              <input type="number" id="amountInput" step="1" min="1" value="450" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="merchantInput">Merchant / UPI VPA</label>
+            <input type="text" id="merchantInput" value="BlueTokai_Coffee" placeholder="e.g. BlueTokai_Coffee" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="latInput">Latitude</label>
+              <input type="number" id="latInput" step="0.0001" value="28.6139" required>
+            </div>
+            <div class="form-group">
+              <label for="lonInput">Longitude</label>
+              <input type="number" id="lonInput" step="0.0001" value="77.2090" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hoursInput">Hours Since Last Tx</label>
+              <input type="number" id="hoursInput" step="any" min="0" value="2.5" required>
+            </div>
+            <div class="form-group">
+              <label for="monthSpentInput">Month Spend (INR)</label>
+              <input type="number" id="monthSpentInput" step="any" min="0" value="11480" required>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitTxBtn">
+            <span class="btn-text">Send Money / Initiate Transfer</span>
+            <svg class="send-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+
+        <div id="quickStatusBanner" class="quick-status-banner hidden">
+          <div class="status-icon" id="quickStatusIcon"></div>
+          <div class="status-text" id="quickStatusText">Transaction Approved instantly</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUMN 2: C++17 AI Brain & Telemetry Inspector -->
+    <section class="panel panel-brain">
+      <div class="panel-header">
+        <div class="panel-icon brain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <div>
+          <h2>C++17 Statistical & k-NN Brain</h2>
+          <p class="subtitle">Zero-Dependency CLI Sub-Millisecond Anomaly Engine</p>
+        </div>
+        <div class="badge-exec-time" id="execTimeBadge">
+          <span class="exec-icon">⚡</span>
+          <span id="execTimeValue">0.27 ms</span>
+        </div>
+      </div>
+
+      <!-- Risk Score Gauge -->
+      <div class="gauge-card">
+        <div class="gauge-container">
+          <svg class="gauge-svg" viewBox="0 0 200 120">
+            <path class="gauge-bg" d="M 20 105 A 80 80 0 0 1 180 105" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="16" stroke-linecap="round"/>
+            <path class="gauge-fill" id="gaugeFill" d="M 20 105 A 80 80 0 0 1 180 105" fill="none" stroke="#10b981" stroke-width="16" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="251.2"/>
+          </svg>
+          <div class="gauge-needle" id="gaugeNeedle"></div>
+          <div class="gauge-center-text">
+            <span class="score-number" id="riskScoreNumber">0</span>
+            <span class="score-denom">/ 100</span>
+          </div>
+        </div>
+
+        <div class="verdict-banner" id="verdictBanner">
+          <span class="verdict-pill pill-low" id="verdictPill">LOW RISK</span>
+          <span class="verdict-desc" id="verdictDesc">Auto-Approved by C++ Switch</span>
+        </div>
+      </div>
+
+      <!-- Anomaly Factor Cards -->
+      <div class="metrics-grid">
+        <!-- Spend Z-Score Card -->
+        <div class="metric-card" id="cardSpendZ">
+          <div class="metric-head">
+            <span class="metric-title">Spend Z-Score</span>
+            <span class="metric-badge" id="spendZBadge">Normal</span>
+          </div>
+          <div class="metric-body">
+            <div class="metric-val" id="valSpendZ">0.4σ</div>
+            <div class="metric-sub">Mean: ₹520 • σ: ₹210</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="spendZProgress" style="width: 8%;"></div>
+          </div>
+        </div>
+
+        <!-- Travel Velocity Card -->
+        <div class="metric-card" id="cardVelocity">
+          <div class="metric-head">
+            <span class="metric-title">Travel Velocity</span>
+            <span class="metric-badge" id="velocityBadge">Normal</span>
+          </div>
+          <div class="metric-body">
+            <div class="metric-val" id="valVelocity">0.0 km/h</div>
+            <div class="metric-sub" id="valDistance">Haversine: 0.0 km from Delhi</div>
+          </div>
+          <div class="impossible-travel-badge hidden" id="impossibleTravelAlert">
+            ⚡ IMPOSSIBLE TRAVEL (> 800 km/h)
+          </div>
+        </div>
+
+        <!-- Monthly Budget Velocity Card -->
+        <div class="metric-card" id="cardBudget">
+          <div class="metric-head">
+            <span class="metric-title">Monthly Budget Velocity</span>
+            <span class="metric-badge" id="budgetBadge">66%</span>
+          </div>
+          <div class="metric-body">
+            <div class="metric-val" id="valBudgetRatio">0.66x</div>
+            <div class="metric-sub">Monthly Cap: ₹18,000.00</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="budgetProgress" style="width: 66%;"></div>
+          </div>
+        </div>
+
+        <!-- k-NN Anomaly Score Card -->
+        <div class="metric-card" id="cardKNN">
+          <div class="metric-head">
+            <span class="metric-title">k-NN Distance (k=5)</span>
+            <span class="metric-badge" id="knnBadge">In-Cluster</span>
+          </div>
+          <div class="metric-body">
+            <div class="metric-val" id="valKNN">0.2</div>
+            <div class="metric-sub">Normalized Feature Space Distance</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="knnProgress" style="width: 5%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raw CLI JSON Output Terminal -->
+      <div class="cli-terminal-wrap">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">fraud_engine stdout (JSON)</div>
+          <div class="terminal-lang">C++17 • O3</div>
+        </div>
+        <pre class="terminal-code" id="terminalStdout">{"riskScore":0,"spendZScore":0.4,"distanceKm":0.0,"velocityKmh":0.0,"knnDistance":0.2,"execTimeMs":0.27,"verdict":"LOW_RISK"}</pre>
+      </div>
+    </section>
+
+    <!-- COLUMN 3: Bank SOC Alert Feed & TinyFish.ai Live Agent -->
+    <section class="panel panel-soc">
+      <div class="panel-header">
+        <div class="panel-icon soc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Bank SOC & TinyFish.ai</h2>
+          <p class="subtitle">Live Security Ops & Autonomous Web Agent</p>
+        </div>
+      </div>
+
+      <!-- TinyFish Autonomous Agent HUD -->
+      <div class="agent-console-card">
+        <div class="agent-console-header">
+          <div class="agent-title-row">
+            <span class="agent-avatar">🤖</span>
+            <div>
+              <div class="agent-name">TinyFish Autonomous Web Agent</div>
+              <div class="agent-sub">Automated Fraud Warrant & Account Freeze Dispatcher</div>
+            </div>
+          </div>
+          <div class="agent-status-badge" id="agentStatusBadge">IDLE</div>
+        </div>
+
+        <div class="agent-stream-box" id="agentStreamBox">
+          <div class="stream-line system">[System] TinyFish Web Agent listening on /api/tx/verify-2fa...</div>
+          <div class="stream-line system">[System] Ready to automate CyberCrime Portal e-Freeze on 2FA denial.</div>
+        </div>
+
+        <div class="agent-ticket-banner hidden" id="agentTicketBanner">
+          <div class="ticket-icon">🛡️</div>
+          <div>
+            <div class="ticket-label">OFFICIAL FRAUD INCIDENT TICKET</div>
+            <div class="ticket-id" id="agentTicketId">TF-INC-99482-IN</div>
+          </div>
+          <div class="ticket-warrant-tag">WARRANT ISSUED</div>
+        </div>
+      </div>
+
+      <!-- Real-Time Bank SOC Alert Feed -->
+      <div class="soc-feed-section">
+        <div class="feed-header">
+          <span class="feed-title">Bank SOC Security Feed</span>
+          <span class="feed-count" id="socCountBadge">3 Alerts</span>
+        </div>
+        <div class="soc-alerts-list" id="socAlertsList">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 2-Step Verification (2FA) Modal for Challenged Transactions -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal-container">
+      <div class="modal-glow"></div>
+      
+      <div class="modal-header">
+        <div class="modal-badge-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span>2-STEP VERIFICATION REQUIRED</span>
+        </div>
+        <div class="modal-timer">
+          <span class="timer-clock">⏱</span>
+          <span id="countdownTimer">60s</span>
+        </div>
+      </div>
+
+      <div class="modal-tx-summary">
+        <div class="modal-amount" id="modalAmountDisplay">₹24,000.00</div>
+        <div class="modal-merchant" id="modalMerchantDisplay">FastCashLotteryUPI</div>
+      </div>
+
+      <!-- C++ Anomaly Breakdown -->
+      <div class="modal-section-title">
+        <span>⚡ C++17 Anomaly Detections</span>
+      </div>
+      <div class="modal-reasons-list" id="modalReasonsList">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- TinyFish.ai OSINT Intel -->
+      <div class="modal-section-title">
+        <span>🔍 TinyFish.ai Live Web Intelligence</span>
+      </div>
+      <div class="osint-warning-box" id="osintWarningBox">
+        <div class="osint-badge" id="osintRiskTag">HIGH THREAT</div>
+        <div class="osint-text" id="osintWarningText">FLAGGED: 11 active scam complaints on National CyberCrime portal and RBI Sachet within past 48 hours.</div>
+        <div class="osint-meta" id="osintMetaText">Sources: National Cyber Crime Reporting Portal • ConsumerComplaints.in</div>
+      </div>
+
+      <!-- Actions -->
+      <div class="modal-actions">
+        <button type="button" class="btn-confirm-legit" id="btnConfirm2FA">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Confirm — It's Me
+        </button>
+        <button type="button" class="btn-deny-freeze" id="btnDeny2FA">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+          Deny — Block & Freeze
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
